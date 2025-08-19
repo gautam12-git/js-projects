@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-
    const expenseForm = document.getElementById("expense-form")
    const expenseName =  document.getElementById("expense-name")
    const expenseNumber = document.getElementById("expense-number")
    const expenseList =  document.getElementById("expense-list")
    const total = document.getElementById("total")
    const totalAmount = document.getElementById("total-amount")
-
 
    let Expenses = JSON.parse(localStorage.getItem("expense")) || [];
    let Total = calculateTotal();
@@ -30,20 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
            renderExpenses()
            updateTotal()
            
-           
-           
-           
            expenseName.value = ""
            expenseNumber.value = ""
-           
-
-         
-
+        
      }
 
    })
-
-
 
    function renderExpenses() {
     expenseList.innerHTML = ""
@@ -72,18 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
     }
 
-
-   
-
-    
-   
-
-
-
    function calculateTotal() {
       return Expenses.reduce((sum, expense) => sum + expense.amount, 0);
        
-
    }
 
     function updateTotal() {
